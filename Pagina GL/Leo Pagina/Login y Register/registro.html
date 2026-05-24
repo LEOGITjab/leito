@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="registro.css">
+  <title>Registro</title>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="register-box">
+
+    <h1>Bienvenido</h1>
+
+    <form id="registerForm">
+
+      <div class="input-box">
+        <input type="text" placeholder="Nombre completo" required>
+      </div>
+
+      <div class="input-box">
+        <input type="email" placeholder="Correo electrónico" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Contraseña" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Repetir contraseña" required>
+      </div>
+
+      <div class="checks">
+        <label>
+          <input type="checkbox" required>
+          Confirmo ser mayor de edad
+        </label>
+
+        <label>
+          <input type="checkbox" required>
+          Acepto términos y privacidad
+        </label>
+      </div>
+
+      <button type="submit">Registrarse</button>
+
+      <p class="login">
+        ¿Ya tienes cuenta?
+        <a href="login.html">Inicia sesión aquí</a>
+      </p>
+
+    </form>
+
+  </div>
+
+  <script>
+    const form = document.getElementById("registerForm");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const passwords = document.querySelectorAll("input[type='password']");
+
+      if(passwords[0].value !== passwords[1].value){
+        alert("Las contraseñas no coinciden");
+        return;
+      }
+
+      alert("Registro exitoso 🚀");
+    });
+  </script>
+
+</body>
+</html>
